@@ -1,0 +1,1697 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>سامانه خدمات الکترونیک | شرکت شهرک‌های صنعتی استان البرز</title>
+    <meta name="description" content="درگاه خدمات الکترونیک شرکت شهرک‌های صنعتی استان البرز">
+
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #a51f3d;
+            --primary-dark: #81172e;
+            --primary-light: #fff0f3;
+            --text: #29272a;
+            --text-secondary: #777278;
+            --background: #ffffff;
+            --page-background: #f5f5f7;
+            --border: #eeeeef;
+            --radius: 16px;
+            --nav-height: 68px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: "Vazirmatn", Tahoma, sans-serif;
+            background: var(--page-background);
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        button, input {
+            font-family: inherit;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            margin: 0 auto;
+            background: var(--background);
+            position: relative;
+            overflow: clip;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.035);
+
+            /* Space for the fixed bottom navigation */
+            padding-bottom: calc(var(--nav-height) + 16px + env(safe-area-inset-bottom));
+        }
+
+        .content {
+            padding: 0 22px;
+        }
+
+        /* Header */
+
+        .header {
+            height: 76px;
+            padding: 0 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.035);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-title {
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.8;
+            color: var(--primary);
+        }
+
+        .brand-subtitle {
+            color: var(--text-secondary);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .menu-button {
+            width: 42px;
+            height: 42px;
+            background: transparent;
+            color: var(--primary);
+            font-size: 23px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .menu-button:hover {
+            background: var(--primary-light);
+        }
+
+        /* Dropdown menu */
+
+        .menu-panel {
+            position: absolute;
+            top: 66px;
+            left: 18px;
+            right: 18px;
+            z-index: 120;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .menu-panel.open {
+            display: block;
+            animation: menuIn 0.2s ease;
+        }
+
+        .menu-link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #49444a;
+            text-align: right;
+            background: transparent;
+        }
+
+        .menu-link i {
+            width: 22px;
+            text-align: center;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .menu-link:hover {
+            background: #fff4f6;
+        }
+
+        @keyframes menuIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Banner slider */
+
+        .banner-section {
+            padding: 18px 14px 0;
+        }
+
+        .banner-slider {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            background: #f0edf7;
+            aspect-ratio: 1.35 / 1;
+            isolation: isolate;
+        }
+
+        .banner-track {
+            display: flex;
+            flex-direction: row;
+            direction: rtl;
+            width: 100%;
+            height: 100%;
+            transition: transform 400ms ease;
+            will-change: transform;
+        }
+
+        .banner-slide {
+            position: relative;
+            flex: 0 0 100%;
+            width: 100%;
+            min-width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #f0edf7;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .banner-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 220, 225, 0.9), transparent 38%),
+                radial-gradient(circle at 85% 15%, rgba(213, 218, 255, 0.9), transparent 40%),
+                linear-gradient(135deg, #fdf7f8, #e9eafa);
+            color: var(--primary);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .banner-placeholder[hidden] {
+            display: none;
+        }
+
+        .banner-placeholder i {
+            font-size: 45px;
+            opacity: 0.7;
+        }
+
+        .banner-placeholder strong {
+            font-size: 13px;
+        }
+
+        .banner-placeholder span {
+            font-size: 10px;
+            color: #777;
+        }
+
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            z-index: 3;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.92);
+            color: var(--primary);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .banner-prev {
+            right: 10px;
+        }
+
+        .banner-next {
+            left: 10px;
+        }
+
+        .banner-dots {
+            position: absolute;
+            z-index: 4;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            direction: ltr;
+        }
+
+        .banner-dot {
+            width: 7px;
+            height: 7px;
+            padding: 0;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.75);
+            transition: width 0.2s ease, background 0.2s ease;
+        }
+
+        .banner-dot.active {
+            width: 20px;
+            background: #fff;
+        }
+
+        /* Quick access: two columns */
+
+        .quick-access {
+            padding-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .quick-link {
+            min-width: 0;
+            min-height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 7px;
+            padding: 9px 10px;
+            border: 1px solid #eeeeef;
+            border-radius: 13px;
+            background: #fff;
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.025);
+            text-align: right;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        }
+
+        .quick-link:hover {
+            border-color: #f0c9d2;
+            background: #fffafb;
+            transform: translateY(-1px);
+        }
+
+        .quick-link-right {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            min-width: 0;
+        }
+
+        .quick-icon {
+            width: 29px;
+            height: 29px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .quick-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            color: #383438;
+            line-height: 1.8;
+        }
+
+        .quick-arrow {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #8b858b;
+            font-size: 9px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .quick-arrow i {
+            font-size: 9px;
+        }
+
+        /* Section headings */
+
+        .section {
+            padding-top: 30px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 21px;
+        }
+
+        .section-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .section-mark {
+            width: 4px;
+            height: 22px;
+            background: var(--primary);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #302b30;
+        }
+
+        .section-more {
+            font-size: 10px;
+            color: var(--primary);
+            white-space: nowrap;
+        }
+
+        /* Services grid */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 8px;
+            row-gap: 27px;
+        }
+
+        .service-item {
+            min-width: 0;
+            min-height: 91px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            gap: 7px;
+            border-radius: 12px;
+            padding: 3px 1px 5px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .service-item:hover {
+            background: #fff8f9;
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            height: 47px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 31px;
+            line-height: 1;
+            transition: transform 0.2s;
+        }
+
+        .service-item:hover .service-icon {
+            transform: scale(1.08);
+        }
+
+        .service-title {
+            display: block;
+            width: 100%;
+            font-size: 10.5px;
+            font-weight: 700;
+            line-height: 1.8;
+            color: #3b373b;
+            overflow-wrap: anywhere;
+        }
+
+        .icon-cyan { color: #13a8b5; }
+        .icon-rose { color: #cf4c69; }
+        .icon-orange { color: #df8740; }
+        .icon-green { color: #239c75; }
+        .icon-amber { color: #d39a25; }
+        .icon-indigo { color: #6765c7; }
+        .icon-blue { color: #4286c9; }
+        .icon-purple { color: #9462bc; }
+        .icon-pink { color: #d85c91; }
+        .icon-gray { color: #74747e; }
+        .icon-teal { color: #299b9a; }
+        .icon-red { color: #b93645; }
+
+        /* Other services */
+
+        .other-services {
+            border-top: 1px solid #f0eef0;
+            margin-top: 31px;
+            padding-top: 27px;
+        }
+
+        .other-services .services-grid {
+            row-gap: 25px;
+        }
+
+        .other-services .service-icon {
+            font-size: 29px;
+            height: 43px;
+        }
+
+        .other-services .service-title {
+            font-size: 10px;
+            color: #575157;
+        }
+
+        /* AI assistant card */
+
+        .assistant-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 32px;
+            padding: 15px;
+            border: 1px solid #f0dce2;
+            border-radius: 15px;
+            background: linear-gradient(110deg, #fff7f9, #f9f7ff);
+        }
+
+        .assistant-info {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-width: 0;
+        }
+
+        .assistant-icon {
+            width: 43px;
+            height: 43px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #f8e4eb;
+            color: var(--primary);
+            font-size: 21px;
+        }
+
+        .assistant-title {
+            font-size: 12px;
+            font-weight: 800;
+            color: #393239;
+        }
+
+        .assistant-description {
+            margin-top: 2px;
+            color: #8b8189;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .assistant-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #fff;
+            padding: 9px 12px;
+            border-radius: 9px;
+            font-size: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+
+        .assistant-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+
+        .footer {
+            margin-top: 32px;
+            padding: 23px 20px 20px;
+            border-top: 1px solid #f0eef0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .footer-title {
+            color: #4c444a;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .footer-description {
+            margin-top: 5px;
+            color: #918a91;
+            font-size: 10px;
+        }
+
+        .footer-copy {
+            margin-top: 12px;
+            color: #aaa4aa;
+            font-size: 9px;
+        }
+
+        /* Fixed bottom navigation */
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 520px;
+            min-height: var(--nav-height);
+            z-index: 9999;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            padding: 7px 14px calc(7px + env(safe-area-inset-bottom));
+
+            background: #ffffff;
+            border-top: 1px solid #efedef;
+            box-shadow: 0 -5px 20px rgba(30, 20, 25, 0.06);
+
+            /* Opaque background: page content cannot show through */
+            opacity: 1;
+            isolation: isolate;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        .bottom-link {
+            flex: 1;
+            min-width: 0;
+            min-height: 48px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            color: #9a949a;
+            font-size: 9px;
+            font-weight: 600;
+            padding: 2px;
+            background: #ffffff;
+            white-space: nowrap;
+            transition: color 0.2s;
+        }
+
+        .bottom-link i {
+            display: block;
+            font-size: 19px;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .bottom-link span {
+            display: block;
+        }
+
+        .bottom-link.active,
+        .bottom-link:hover {
+            color: var(--primary);
+        }
+
+        /* Login modal */
+
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(25, 19, 23, 0.45);
+        }
+
+        .modal-backdrop.open {
+            display: flex;
+        }
+
+        .modal {
+            width: 100%;
+            max-width: 390px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 22px;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: 0 15px 55px rgba(0, 0, 0, 0.16);
+            animation: modalIn 0.2s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 17px;
+        }
+
+        .modal-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #342e34;
+        }
+
+        .modal-close {
+            width: 33px;
+            height: 33px;
+            border-radius: 10px;
+            background: #f6f4f5;
+            color: #706770;
+            font-size: 14px;
+        }
+
+        .modal-text {
+            color: #777078;
+            font-size: 11px;
+            line-height: 2;
+        }
+
+        .form-group {
+            margin-top: 14px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #494249;
+        }
+
+        .form-input {
+            width: 100%;
+            height: 44px;
+            padding: 0 12px;
+            border: 1px solid #e8e4e7;
+            border-radius: 10px;
+            outline: none;
+            background: #fff;
+            color: #332d32;
+            font-size: 12px;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+        }
+
+        .primary-button {
+            width: 100%;
+            min-height: 43px;
+            margin-top: 17px;
+            padding: 10px;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .primary-button:hover {
+            background: var(--primary-dark);
+        }
+
+        .demo-notice {
+            margin-top: 12px;
+            color: #999099;
+            font-size: 10px;
+            line-height: 1.9;
+        }
+
+        /* Responsive */
+
+        @media (min-width: 700px) {
+            .page {
+                margin: 0 auto;
+                min-height: 100vh;
+                min-height: 100dvh;
+                border-radius: 0;
+            }
+
+            .header {
+                border-radius: 0;
+            }
+
+            .banner-section {
+                padding-top: 22px;
+            }
+
+            .services-grid {
+                column-gap: 15px;
+                row-gap: 30px;
+            }
+
+            .service-icon {
+                font-size: 34px;
+                height: 50px;
+            }
+
+            .service-title {
+                font-size: 11px;
+            }
+
+            /* Keep the navigation at the actual bottom on desktop too */
+            .bottom-nav {
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                max-width: 520px;
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .content {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            .header {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            .brand-title {
+                font-size: 12px;
+            }
+
+            .brand-subtitle {
+                font-size: 9px;
+            }
+
+            .service-title {
+                font-size: 9.5px;
+            }
+
+            .service-icon {
+                font-size: 28px;
+            }
+
+            .quick-link {
+                padding: 8px 6px;
+                gap: 4px;
+            }
+
+            .quick-link-right {
+                gap: 5px;
+            }
+
+            .quick-icon {
+                width: 25px;
+                height: 25px;
+                font-size: 11px;
+            }
+
+            .quick-title {
+                font-size: 9.5px;
+            }
+
+            .quick-arrow {
+                font-size: 8px;
+                gap: 3px;
+            }
+
+            .assistant-card {
+                padding: 12px;
+            }
+
+            .assistant-button {
+                padding: 8px;
+                font-size: 9px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page" id="home">
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <a href="index.html" class="brand" aria-label="صفحه اصلی">
+            <div class="brand-logo">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+
+            <div class="brand-text">
+                <div class="brand-title">سامانه خدمات الکترونیک</div>
+                <div class="brand-subtitle">شرکت شهرک‌های صنعتی استان البرز</div>
+            </div>
+        </a>
+
+        <button
+            type="button"
+            class="menu-button"
+            id="menuButton"
+            aria-label="باز کردن منو"
+            aria-expanded="false"
+            aria-controls="menuPanel"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu-panel" id="menuPanel">
+
+            <a href="index.html" class="menu-link">
+                <i class="fa-solid fa-house"></i>
+                صفحه اصلی
+            </a>
+
+            <a href="services.html" class="menu-link">
+                <i class="fa-solid fa-layer-group"></i>
+                همه خدمات
+            </a>
+
+            <a href="bot.html" class="menu-link">
+                <i class="fa-solid fa-robot"></i>
+                دستیار هوش مصنوعی
+            </a>
+
+            <a href="profile.html" class="menu-link">
+                <i class="fa-regular fa-user"></i>
+                پروفایل
+            </a>
+
+            <a href="faq.html" class="menu-link">
+                <i class="fa-solid fa-circle-question"></i>
+                سؤالات متداول
+            </a>
+
+            <button type="button" class="menu-link" data-open-modal="loginModal">
+                <i class="fa-solid fa-lock"></i>
+                ورود به سامانه
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- Banner slider -->
+
+        <section class="banner-section" aria-label="بنرهای سامانه">
+
+            <div class="banner-slider" id="bannerSlider">
+
+                <div class="banner-track" id="bannerTrack">
+
+                    <div class="banner-slide">
+                        <img
+                            src="images/banner-1.jpg"
+                            alt="بنر اول"
+                            fetchpriority="high"
+                        >
+                    </div>
+
+                    <div class="banner-slide">
+                        <img
+                            src="images/banner-2.jpg"
+                            alt="بنر دوم"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <div class="banner-slide">
+                        <img
+                            src="images/banner-3.jpg"
+                            alt="بنر سوم"
+                            loading="lazy"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="banner-placeholder" id="bannerPlaceholder" hidden>
+                    <i class="fa-regular fa-image"></i>
+                    <strong>تصویر بنر پیدا نشد</strong>
+                    <span>تصاویر را در پوشه images قرار دهید.</span>
+                </div>
+
+                <button
+                    type="button"
+                    class="banner-arrow banner-prev"
+                    id="bannerPrev"
+                    aria-label="بنر قبلی"
+                >
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="banner-arrow banner-next"
+                    id="bannerNext"
+                    aria-label="بنر بعدی"
+                >
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="banner-dots" id="bannerDots" aria-label="انتخاب بنر">
+                    <button type="button" class="banner-dot active" aria-label="بنر اول" aria-current="true"></button>
+                    <button type="button" class="banner-dot" aria-label="بنر دوم"></button>
+                    <button type="button" class="banner-dot" aria-label="بنر سوم"></button>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <div class="content">
+
+            <!-- Quick access -->
+
+            <section class="quick-access" id="quickAccess">
+
+                <button
+                    type="button"
+                    class="quick-link"
+                    data-open-modal="loginModal"
+                >
+                    <span class="quick-link-right">
+                        <span class="quick-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+
+                        <span class="quick-title">ورود به سامانه</span>
+                    </span>
+
+                    <span class="quick-arrow">
+                        ورود
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                </button>
+
+
+                <a href="faq.html" class="quick-link">
+                    <span class="quick-link-right">
+                        <span class="quick-icon">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </span>
+
+                        <span class="quick-title">سؤالات متداول</span>
+                    </span>
+
+                    <span class="quick-arrow">
+                        مشاهده
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </span>
+                </a>
+
+            </section>
+
+
+            <!-- Popular services -->
+
+            <section class="section" id="popularServices">
+
+                <div class="section-heading">
+                    <div class="section-title-wrap">
+                        <span class="section-mark"></span>
+                        <h2 class="section-title">خدمات پرکاربرد</h2>
+                    </div>
+
+                    <a href="services.html" class="section-more">
+                        همه خدمات
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                </div>
+
+
+                <div class="services-grid">
+
+                    <a href="connections.html" class="service-item">
+                        <span class="service-icon icon-cyan">
+                            <i class="fa-solid fa-faucet-drip"></i>
+                        </span>
+                        <span class="service-title">انشعابات</span>
+                    </a>
+
+                    <a href="pages/bills.html" class="service-item">
+                        <span class="service-icon icon-rose">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </span>
+                        <span class="service-title">قبوض و حق شارژ</span>
+                    </a>
+
+                    <a href="pages/contracts.html" class="service-item">
+                        <span class="service-icon icon-orange">
+                            <i class="fa-solid fa-file-signature"></i>
+                        </span>
+                        <span class="service-title">امور قراردادها</span>
+                    </a>
+
+                    <a href="pages/construction.html" class="service-item">
+                        <span class="service-icon icon-green">
+                            <i class="fa-solid fa-building-circle-check"></i>
+                        </span>
+                        <span class="service-title">احداث و پایان‌کار</span>
+                    </a>
+
+                    <a href="pages/financial-facilities.html" class="service-item">
+                        <span class="service-icon icon-amber">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </span>
+                        <span class="service-title">تسهیلات مالی</span>
+                    </a>
+
+                    <a href="pages/export-development.html" class="service-item">
+                        <span class="service-icon icon-indigo">
+                            <i class="fa-solid fa-ship"></i>
+                        </span>
+                        <span class="service-title">توسعه صادرات</span>
+                    </a>
+
+                    <a href="pages/industrial-renewal.html" class="service-item">
+                        <span class="service-icon icon-blue">
+                            <i class="fa-solid fa-hammer"></i>
+                        </span>
+                        <span class="service-title">نوسازی صنایع</span>
+                    </a>
+
+                    <a href="pages/domestic-investment.html" class="service-item">
+                        <span class="service-icon icon-purple">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </span>
+                        <span class="service-title">سرمایه‌گذاری داخلی</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- Other services -->
+
+            <section class="other-services" id="otherServices">
+
+                <div class="section-heading">
+                    <div class="section-title-wrap">
+                        <span class="section-mark"></span>
+                        <h2 class="section-title">سایر خدمات</h2>
+                    </div>
+
+                    <a href="services.html" class="section-more">
+                        مشاهده همه
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </a>
+                </div>
+
+
+                <div class="services-grid">
+
+                    <a href="pages/training.html" class="service-item">
+                        <span class="service-icon icon-pink">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </span>
+                        <span class="service-title">آموزش و تور صنعتی</span>
+                    </a>
+
+                    <a href="pages/consulting.html" class="service-item">
+                        <span class="service-icon icon-gray">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </span>
+                        <span class="service-title">مشاوره</span>
+                    </a>
+
+                    <a href="pages/safety-health.html" class="service-item">
+                        <span class="service-icon icon-teal">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </span>
+                        <span class="service-title">ایمنی و بهداشت</span>
+                    </a>
+
+                    <a href="pages/business-clusters.html" class="service-item">
+                        <span class="service-icon icon-indigo">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </span>
+                        <span class="service-title">خوشه‌های کسب‌وکار</span>
+                    </a>
+
+                    <a href="pages/exhibitions.html" class="service-item">
+                        <span class="service-icon icon-amber">
+                            <i class="fa-solid fa-store"></i>
+                        </span>
+                        <span class="service-title">نمایشگاه‌های داخلی و خارجی</span>
+                    </a>
+
+                    <a href="pages/startups.html" class="service-item">
+                        <span class="service-icon icon-purple">
+                            <i class="fa-solid fa-rocket"></i>
+                        </span>
+                        <span class="service-title">استارتاپ‌ها</span>
+                    </a>
+
+                    <a href="pages/thesis-support.html" class="service-item">
+                        <span class="service-icon icon-blue">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </span>
+                        <span class="service-title">حمایت از پایان‌نامه</span>
+                    </a>
+
+                    <a href="pages/applicants.html" class="service-item">
+                        <span class="service-icon icon-red">
+                            <i class="fa-solid fa-users"></i>
+                        </span>
+                        <span class="service-title">امور متقاضیان</span>
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI assistant -->
+
+            <section class="assistant-card" id="aiAssistant">
+
+                <div class="assistant-info">
+
+                    <div class="assistant-icon">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+
+                    <div>
+                        <h2 class="assistant-title">دستیار هوش مصنوعی</h2>
+                        <p class="assistant-description">
+                            راهنمای دریافت خدمات و پاسخ به پرسش‌های شما
+                        </p>
+                    </div>
+
+                </div>
+
+                <a href="bot.html" class="assistant-button">
+                    شروع گفتگو
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="footer-title">
+            شرکت شهرک‌های صنعتی استان البرز
+        </div>
+
+        <p class="footer-description">
+            درگاه خدمات الکترونیک
+        </p>
+
+        <div class="footer-copy">
+            تمامی حقوق متعلق به شرکت شهرک‌های صنعتی استان البرز است.
+        </div>
+
+    </footer>
+
+
+    <!-- Bottom navigation -->
+
+    <nav class="bottom-nav" aria-label="ناوبری اصلی">
+
+        <a href="index.html" class="bottom-link active" aria-current="page">
+            <i class="fa-solid fa-house"></i>
+            <span>خانه</span>
+        </a>
+
+        <a href="services.html" class="bottom-link">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>خدمات</span>
+        </a>
+
+        <a href="bot.html" class="bottom-link">
+            <i class="fa-solid fa-robot"></i>
+            <span>دستیار</span>
+        </a>
+
+        <a href="profile.html" class="bottom-link">
+            <i class="fa-regular fa-user"></i>
+            <span>پروفایل</span>
+        </a>
+
+    </nav>
+
+
+    <!-- Login modal -->
+
+    <div
+        class="modal-backdrop"
+        id="loginModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="loginTitle"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+                <h2 class="modal-title" id="loginTitle">ورود به سامانه</h2>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    data-close-modal
+                    aria-label="بستن"
+                >
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <p class="modal-text">
+                برای ورود، از اطلاعات حساب کاربری سامانه اصلی استفاده کنید.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label class="form-label" for="username">نام کاربری</label>
+                    <input
+                        class="form-input"
+                        id="username"
+                        name="username"
+                        type="text"
+                        autocomplete="username"
+                        placeholder="نام کاربری خود را وارد کنید"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="password">رمز عبور</label>
+                    <input
+                        class="form-input"
+                        id="password"
+                        name="password"
+                        type="password"
+                        autocomplete="current-password"
+                        placeholder="رمز عبور خود را وارد کنید"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="primary-button">
+                    ادامه
+                </button>
+
+            </form>
+
+            <p class="demo-notice" id="loginNotice">
+                این بخش نمایشی است و هنوز به سامانه احراز هویت متصل نشده است.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+    /* Banner slider */
+
+    (function () {
+        const slider = document.getElementById("bannerSlider");
+        const track = document.getElementById("bannerTrack");
+        const placeholder = document.getElementById("bannerPlaceholder");
+
+        if (!slider || !track) return;
+
+        const slides = Array.from(track.querySelectorAll(".banner-slide"));
+        const dots = Array.from(document.querySelectorAll(".banner-dot"));
+        const previousButton = document.getElementById("bannerPrev");
+        const nextButton = document.getElementById("bannerNext");
+
+        let index = 0;
+        let timer = null;
+        let startX = 0;
+        let failedImages = 0;
+
+        slides.forEach(function (slide) {
+            const image = slide.querySelector("img");
+
+            function handleImageError() {
+                slide.style.background =
+                    "radial-gradient(circle at 20% 80%, rgba(255,220,225,.9), transparent 38%)," +
+                    "radial-gradient(circle at 85% 15%, rgba(213,218,255,.9), transparent 40%)," +
+                    "linear-gradient(135deg, #fdf7f8, #e9eafa)";
+
+                image.style.display = "none";
+                failedImages++;
+
+                if (failedImages === slides.length && placeholder) {
+                    placeholder.hidden = false;
+                    previousButton.style.display = "none";
+                    nextButton.style.display = "none";
+                    document.getElementById("bannerDots").style.display = "none";
+                }
+            }
+
+            image.addEventListener("error", handleImageError);
+
+            if (image.complete && image.naturalWidth === 0) {
+                handleImageError();
+            }
+        });
+
+        function showSlide(nextIndex) {
+            index = (nextIndex + slides.length) % slides.length;
+
+            /*
+             * In RTL layout, positive translateX moves the track
+             * to reveal the next slide.
+             */
+            track.style.transform = "translateX(" + (index * 100) + "%)";
+
+            dots.forEach(function (dot, dotIndex) {
+                const active = dotIndex === index;
+
+                dot.classList.toggle("active", active);
+
+                if (active) {
+                    dot.setAttribute("aria-current", "true");
+                } else {
+                    dot.removeAttribute("aria-current");
+                }
+            });
+        }
+
+        function stopTimer() {
+            if (timer !== null) {
+                clearInterval(timer);
+                timer = null;
+            }
+        }
+
+        function startTimer() {
+            stopTimer();
+
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                return;
+            }
+
+            timer = setInterval(function () {
+                showSlide(index + 1);
+            }, 5000);
+        }
+
+        previousButton.addEventListener("click", function () {
+            showSlide(index - 1);
+            startTimer();
+        });
+
+        nextButton.addEventListener("click", function () {
+            showSlide(index + 1);
+            startTimer();
+        });
+
+        dots.forEach(function (dot, dotIndex) {
+            dot.addEventListener("click", function () {
+                showSlide(dotIndex);
+                startTimer();
+            });
+        });
+
+        slider.addEventListener("touchstart", function (event) {
+            startX = event.changedTouches[0].screenX;
+        }, { passive: true });
+
+        slider.addEventListener("touchend", function (event) {
+            const endX = event.changedTouches[0].screenX;
+            const difference = endX - startX;
+
+            if (Math.abs(difference) > 40) {
+                showSlide(index + (difference > 0 ? 1 : -1));
+                startTimer();
+            }
+        }, { passive: true });
+
+        slider.addEventListener("mouseenter", stopTimer);
+        slider.addEventListener("mouseleave", startTimer);
+
+        slider.addEventListener("focusin", stopTimer);
+        slider.addEventListener("focusout", startTimer);
+
+        document.addEventListener("visibilitychange", function () {
+            if (document.hidden) {
+                stopTimer();
+            } else {
+                startTimer();
+            }
+        });
+
+        showSlide(0);
+        startTimer();
+    })();
+
+
+    /* Dropdown menu */
+
+    const menuButton = document.getElementById("menuButton");
+    const menuPanel = document.getElementById("menuPanel");
+
+    function closeMenu() {
+        menuPanel.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "باز کردن منو");
+        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    menuButton.addEventListener("click", function () {
+        const isOpen = menuPanel.classList.toggle("open");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "بستن منو" : "باز کردن منو"
+        );
+
+        menuButton.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    menuPanel.querySelectorAll("a, button").forEach(function (item) {
+        item.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+        if (
+            !menuPanel.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+
+    /* Login modal */
+
+    let lastFocusedElement = null;
+
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+
+        if (!modal) return;
+
+        closeMenu();
+
+        lastFocusedElement = document.activeElement;
+        modal.classList.add("open");
+        document.body.style.overflow = "hidden";
+
+        const firstInput = modal.querySelector("input, button");
+
+        if (firstInput) {
+            firstInput.focus();
+        }
+    }
+
+    function closeModal(modal) {
+        modal.classList.remove("open");
+
+        if (!document.querySelector(".modal-backdrop.open")) {
+            document.body.style.overflow = "";
+        }
+
+        if (
+            lastFocusedElement &&
+            typeof lastFocusedElement.focus === "function"
+        ) {
+            lastFocusedElement.focus();
+        }
+    }
+
+    document.querySelectorAll("[data-open-modal]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            openModal(button.getAttribute("data-open-modal"));
+        });
+    });
+
+    document.querySelectorAll("[data-close-modal]").forEach(function (button) {
+        button.addEventListener("click", function () {
+            const modal = button.closest(".modal-backdrop");
+
+            if (modal) closeModal(modal);
+        });
+    });
+
+    document.querySelectorAll(".modal-backdrop").forEach(function (modal) {
+        modal.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                closeModal(modal);
+            }
+        });
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeMenu();
+
+            document.querySelectorAll(".modal-backdrop.open").forEach(
+                function (modal) {
+                    closeModal(modal);
+                }
+            );
+        }
+    });
+
+
+    /* Demo login form */
+
+    document.getElementById("loginForm").addEventListener(
+        "submit",
+        function (event) {
+            event.preventDefault();
+
+            document.getElementById("loginNotice").textContent =
+                "رابط ورود آماده است؛ برای ورود واقعی باید این فرم به سامانه احراز هویت متصل شود.";
+        }
+    );
+</script>
+
+</body>
+</html>
+```
