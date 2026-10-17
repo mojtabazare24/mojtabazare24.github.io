@@ -1,0 +1,1314 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>خدمات | سامانه خدمات الکترونیک شرکت شهرک‌های صنعتی استان البرز</title>
+    <meta name="description" content="فهرست خدمات الکترونیک شرکت شهرک‌های صنعتی استان البرز">
+
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.0/Vazirmatn-font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #a51f3d;
+            --primary-dark: #81172e;
+            --primary-light: #fff0f3;
+            --text: #29272a;
+            --text-secondary: #777278;
+            --background: #ffffff;
+            --page-background: #f5f5f7;
+            --border: #eeeeef;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: "Vazirmatn", Tahoma, sans-serif;
+            background: var(--page-background);
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        button, input {
+            font-family: inherit;
+        }
+
+        button, a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 520px;
+            min-height: 100vh;
+            margin: 0 auto;
+            background: var(--background);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.035);
+        }
+
+        .content {
+            padding: 0 22px;
+        }
+
+        /* Header */
+
+        .header {
+            height: 76px;
+            padding: 0 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.035);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            min-width: 0;
+        }
+
+        .brand-title {
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.8;
+            color: var(--primary);
+        }
+
+        .brand-subtitle {
+            color: var(--text-secondary);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .menu-button {
+            width: 42px;
+            height: 42px;
+            background: transparent;
+            color: var(--primary);
+            font-size: 23px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .menu-button:hover {
+            background: var(--primary-light);
+        }
+
+        /* Dropdown menu */
+
+        .menu-panel {
+            position: absolute;
+            top: 66px;
+            left: 18px;
+            right: 18px;
+            z-index: 120;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .menu-panel.open {
+            display: block;
+            animation: menuIn 0.2s ease;
+        }
+
+        .menu-link {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #49444a;
+            text-align: right;
+            background: transparent;
+        }
+
+        .menu-link i {
+            width: 22px;
+            text-align: center;
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .menu-link:hover,
+        .menu-link.current {
+            background: #fff4f6;
+        }
+
+        @keyframes menuIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Page introduction */
+
+        .page-intro {
+            padding: 25px 22px 22px;
+            background: linear-gradient(135deg, #fff8fa, #ffffff 75%);
+            border-bottom: 1px solid #f5eef0;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #918a91;
+            font-size: 10px;
+            margin-bottom: 14px;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb i {
+            font-size: 8px;
+        }
+
+        .intro-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .intro-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .intro-title h1 {
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.8;
+        }
+
+        .intro-title p {
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        /* Search */
+
+        .search-box {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .search-box > i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #958d94;
+            font-size: 15px;
+            pointer-events: none;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 47px;
+            padding: 0 43px 0 42px;
+            border: 1px solid #e9e5e8;
+            border-radius: 12px;
+            background: #fff;
+            outline: none;
+            font-size: 12px;
+            color: var(--text);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(165, 31, 61, 0.07);
+        }
+
+        .search-input::placeholder {
+            color: #aaa3aa;
+        }
+
+        .clear-search {
+            display: none;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            color: #817982;
+            background: #f5f3f5;
+        }
+
+        .clear-search.visible {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main content */
+
+        .content {
+            padding-top: 23px;
+            padding-bottom: 28px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 17px;
+        }
+
+        .section-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .section-mark {
+            width: 4px;
+            height: 22px;
+            background: var(--primary);
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #302b30;
+        }
+
+        .results-count {
+            font-size: 10px;
+            color: #928b92;
+            white-space: nowrap;
+        }
+
+        /* Category filters */
+
+        .category-filters {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 1px 0 12px;
+            margin-bottom: 10px;
+            scrollbar-width: none;
+        }
+
+        .category-filters::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-button {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 12px;
+            border: 1px solid #eae6e9;
+            border-radius: 10px;
+            background: #fff;
+            color: #69616a;
+            font-size: 10px;
+            font-weight: 600;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .filter-button i {
+            font-size: 11px;
+        }
+
+        .filter-button:hover {
+            border-color: #e7bcc7;
+            color: var(--primary);
+        }
+
+        .filter-button.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        /* Services grid */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            column-gap: 8px;
+            row-gap: 24px;
+        }
+
+        .service-item {
+            min-width: 0;
+            min-height: 92px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            gap: 7px;
+            padding: 5px 2px 7px;
+            border-radius: 12px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .service-item:hover {
+            background: #fff7f9;
+            transform: translateY(-2px);
+        }
+
+        .service-icon {
+            height: 45px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 29px;
+            line-height: 1;
+            transition: transform 0.2s;
+        }
+
+        .service-item:hover .service-icon {
+            transform: scale(1.08);
+        }
+
+        .service-title {
+            display: block;
+            width: 100%;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 1.9;
+            color: #3b373b;
+            overflow-wrap: anywhere;
+        }
+
+        .icon-cyan { color: #13a8b5; }
+        .icon-rose { color: #cf4c69; }
+        .icon-orange { color: #df8740; }
+        .icon-green { color: #239c75; }
+        .icon-amber { color: #d39a25; }
+        .icon-indigo { color: #6765c7; }
+        .icon-blue { color: #4286c9; }
+        .icon-purple { color: #9462bc; }
+        .icon-pink { color: #d85c91; }
+        .icon-gray { color: #74747e; }
+        .icon-teal { color: #299b9a; }
+        .icon-red { color: #b93645; }
+
+        .service-item[hidden] {
+            display: none;
+        }
+
+        /* No results */
+
+        .empty-state {
+            display: none;
+            padding: 35px 15px;
+            text-align: center;
+            border: 1px dashed #e8dfe3;
+            border-radius: 14px;
+            background: #fffafb;
+        }
+
+        .empty-state.visible {
+            display: block;
+        }
+
+        .empty-state i {
+            font-size: 30px;
+            color: #c7a4ae;
+            margin-bottom: 10px;
+        }
+
+        .empty-state h3 {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .empty-state p {
+            font-size: 10px;
+            color: var(--text-secondary);
+        }
+
+        /* Help card */
+
+        .help-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 32px;
+            padding: 15px;
+            border: 1px solid #f0dce2;
+            border-radius: 15px;
+            background: linear-gradient(110deg, #fff7f9, #f9f7ff);
+        }
+
+        .help-info {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            min-width: 0;
+        }
+
+        .help-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #f8e4eb;
+            color: var(--primary);
+            font-size: 20px;
+        }
+
+        .help-title {
+            font-size: 11px;
+            font-weight: 800;
+            color: #393239;
+        }
+
+        .help-description {
+            margin-top: 2px;
+            color: #8b8189;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .help-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #fff;
+            padding: 9px 11px;
+            border-radius: 9px;
+            font-size: 10px;
+            font-weight: 700;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .help-button:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Footer */
+
+        .footer {
+            margin-top: 8px;
+            padding: 23px 20px 105px;
+            border-top: 1px solid #f0eef0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .footer-title {
+            color: #4c444a;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .footer-description {
+            margin-top: 5px;
+            color: #918a91;
+            font-size: 10px;
+        }
+
+        .footer-copy {
+            margin-top: 12px;
+            color: #aaa4aa;
+            font-size: 9px;
+        }
+
+        /* Bottom navigation */
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 520px;
+            z-index: 90;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid #efedef;
+            box-shadow: 0 -5px 20px rgba(30, 20, 25, 0.035);
+        }
+
+        .bottom-link {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            color: #9a949a;
+            font-size: 9px;
+            font-weight: 600;
+            padding: 2px;
+            transition: color 0.2s;
+        }
+
+        .bottom-link i {
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .bottom-link.active,
+        .bottom-link:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+
+        @media (min-width: 700px) {
+            .page {
+                margin: 24px auto;
+                min-height: calc(100vh - 48px);
+                border-radius: 20px;
+            }
+
+            .header {
+                border-radius: 20px 20px 0 0;
+            }
+
+            .services-grid {
+                column-gap: 15px;
+                row-gap: 28px;
+            }
+
+            .service-icon {
+                font-size: 33px;
+                height: 49px;
+            }
+
+            .service-title {
+                font-size: 11px;
+            }
+
+            .bottom-nav {
+                bottom: 24px;
+                border-radius: 0 0 20px 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .content {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            .header {
+                padding-right: 16px;
+                padding-left: 16px;
+            }
+
+            .brand-title {
+                font-size: 12px;
+            }
+
+            .brand-subtitle {
+                font-size: 9px;
+            }
+
+            .services-grid {
+                column-gap: 5px;
+            }
+
+            .service-title {
+                font-size: 9.5px;
+            }
+
+            .service-icon {
+                font-size: 27px;
+            }
+
+            .help-card {
+                padding: 11px;
+            }
+
+            .help-button {
+                padding: 8px;
+                font-size: 9px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <a href="index.html" class="brand" aria-label="صفحه اصلی">
+            <div class="brand-logo">
+                <i class="fa-solid fa-industry"></i>
+            </div>
+
+            <div class="brand-text">
+                <div class="brand-title">سامانه خدمات الکترونیک</div>
+                <div class="brand-subtitle">شرکت شهرک‌های صنعتی استان البرز</div>
+            </div>
+        </a>
+
+        <button
+            type="button"
+            class="menu-button"
+            id="menuButton"
+            aria-label="باز کردن منو"
+            aria-expanded="false"
+            aria-controls="menuPanel"
+        >
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav class="menu-panel" id="menuPanel">
+
+            <a href="index.html" class="menu-link">
+                <i class="fa-solid fa-house"></i>
+                صفحه اصلی
+            </a>
+
+            <a href="services.html" class="menu-link current" aria-current="page">
+                <i class="fa-solid fa-layer-group"></i>
+                همه خدمات
+            </a>
+
+            <a href="bot.html" class="menu-link">
+                <i class="fa-solid fa-robot"></i>
+                دستیار هوش مصنوعی
+            </a>
+
+            <a href="profile.html" class="menu-link">
+                <i class="fa-regular fa-user"></i>
+                پروفایل
+            </a>
+
+            <a href="faq.html" class="menu-link">
+                <i class="fa-solid fa-circle-question"></i>
+                سؤالات متداول
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Page introduction -->
+
+    <section class="page-intro">
+
+        <div class="breadcrumb">
+            <a href="index.html">صفحه اصلی</a>
+            <i class="fa-solid fa-chevron-left"></i>
+            <span>خدمات</span>
+        </div>
+
+        <div class="intro-title">
+            <div class="intro-icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div>
+                <h1>خدمات الکترونیک</h1>
+                <p>خدمات و حمایت‌های شرکت شهرک‌های صنعتی استان البرز</p>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="search"
+                id="serviceSearch"
+                class="search-input"
+                placeholder="نام خدمت موردنظر را جست‌وجو کنید..."
+                aria-label="جست‌وجوی خدمات"
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                class="clear-search"
+                id="clearSearch"
+                aria-label="پاک کردن جست‌وجو"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+    </section>
+
+
+    <main class="content">
+
+        <!-- Category filters -->
+
+        <div class="category-filters" aria-label="دسته‌بندی خدمات">
+
+            <button type="button" class="filter-button active" data-category="all">
+                <i class="fa-solid fa-border-all"></i>
+                همه خدمات
+            </button>
+
+            <button type="button" class="filter-button" data-category="infrastructure">
+                <i class="fa-solid fa-building"></i>
+                زیرساخت و قرارداد
+            </button>
+
+            <button type="button" class="filter-button" data-category="finance">
+                <i class="fa-solid fa-coins"></i>
+                مالی و سرمایه‌گذاری
+            </button>
+
+            <button type="button" class="filter-button" data-category="development">
+                <i class="fa-solid fa-chart-line"></i>
+                توسعه کسب‌وکار
+            </button>
+
+            <button type="button" class="filter-button" data-category="support">
+                <i class="fa-solid fa-headset"></i>
+                مشاوره و حمایت
+            </button>
+
+        </div>
+
+
+        <!-- Services -->
+
+        <section aria-labelledby="servicesHeading">
+
+            <div class="section-heading">
+
+                <div class="section-title-wrap">
+                    <span class="section-mark"></span>
+                    <h2 class="section-title" id="servicesHeading">فهرست خدمات</h2>
+                </div>
+
+                <span class="results-count" id="resultsCount" aria-live="polite">
+                    ۱۶ خدمت
+                </span>
+
+            </div>
+
+
+            <div class="services-grid" id="servicesGrid">
+
+                <!-- Infrastructure -->
+
+                <a
+                    href="connections.html"
+                    class="service-item"
+                    data-category="infrastructure"
+                    data-search="انشعابات آب برق گاز تاسیسات زیرساخت"
+                >
+                    <span class="service-icon icon-cyan">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </span>
+                    <span class="service-title">انشعابات</span>
+                </a>
+
+                <a
+                    href="pages/bills.html"
+                    class="service-item"
+                    data-category="infrastructure"
+                    data-search="قبوض حق شارژ پرداخت هزینه صورتحساب"
+                >
+                    <span class="service-icon icon-rose">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </span>
+                    <span class="service-title">قبوض و حق شارژ</span>
+                </a>
+
+                <a
+                    href="pages/contracts.html"
+                    class="service-item"
+                    data-category="infrastructure"
+                    data-search="امور قراردادها قرارداد زمین واگذاری"
+                >
+                    <span class="service-icon icon-orange">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </span>
+                    <span class="service-title">امور قراردادها</span>
+                </a>
+
+                <a
+                    href="pages/construction.html"
+                    class="service-item"
+                    data-category="infrastructure"
+                    data-search="احداث پایان کار ساختمان ساخت وساز مجوز"
+                >
+                    <span class="service-icon icon-green">
+                        <i class="fa-solid fa-building-circle-check"></i>
+                    </span>
+                    <span class="service-title">احداث و پایان‌کار</span>
+                </a>
+
+
+                <!-- Finance and investment -->
+
+                <a
+                    href="pages/financial-facilities.html"
+                    class="service-item"
+                    data-category="finance"
+                    data-search="تسهیلات مالی وام تامین مالی اعتبار"
+                >
+                    <span class="service-icon icon-amber">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </span>
+                    <span class="service-title">تسهیلات مالی</span>
+                </a>
+
+                <a
+                    href="pages/domestic-investment.html"
+                    class="service-item"
+                    data-category="finance"
+                    data-search="سرمایه گذاری داخلی سرمایه گذار"
+                >
+                    <span class="service-icon icon-purple">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </span>
+                    <span class="service-title">سرمایه‌گذاری داخلی</span>
+                </a>
+
+
+                <!-- Business development -->
+
+                <a
+                    href="pages/export-development.html"
+                    class="service-item"
+                    data-category="development"
+                    data-search="توسعه صادرات صادرات بازار خارجی"
+                >
+                    <span class="service-icon icon-indigo">
+                        <i class="fa-solid fa-ship"></i>
+                    </span>
+                    <span class="service-title">توسعه صادرات</span>
+                </a>
+
+                <a
+                    href="pages/industrial-renewal.html"
+                    class="service-item"
+                    data-category="development"
+                    data-search="نوسازی صنایع به روزرسانی تجهیزات فناوری"
+                >
+                    <span class="service-icon icon-blue">
+                        <i class="fa-solid fa-hammer"></i>
+                    </span>
+                    <span class="service-title">نوسازی صنایع</span>
+                </a>
+
+                <a
+                    href="pages/business-clusters.html"
+                    class="service-item"
+                    data-category="development"
+                    data-search="خوشه های کسب و کار خوشه صنعتی شبکه سازی"
+                >
+                    <span class="service-icon icon-teal">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </span>
+                    <span class="service-title">خوشه‌های کسب‌وکار</span>
+                </a>
+
+                <a
+                    href="pages/exhibitions.html"
+                    class="service-item"
+                    data-category="development"
+                    data-search="نمایشگاه داخلی خارجی حضور نمایشگاهی"
+                >
+                    <span class="service-icon icon-amber">
+                        <i class="fa-solid fa-store"></i>
+                    </span>
+                    <span class="service-title">نمایشگاه‌های داخلی و خارجی</span>
+                </a>
+
+                <a
+                    href="pages/startups.html"
+                    class="service-item"
+                    data-category="development"
+                    data-search="استارتاپ نوآوری کسب و کار نوپا"
+                >
+                    <span class="service-icon icon-purple">
+                        <i class="fa-solid fa-rocket"></i>
+                    </span>
+                    <span class="service-title">استارتاپ‌ها</span>
+                </a>
+
+
+                <!-- Support and consulting -->
+
+                <a
+                    href="pages/training.html"
+                    class="service-item"
+                    data-category="support"
+                    data-search="آموزش تور صنعتی دوره آموزشی"
+                >
+                    <span class="service-icon icon-pink">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </span>
+                    <span class="service-title">آموزش و تور صنعتی</span>
+                </a>
+
+                <a
+                    href="pages/consulting.html"
+                    class="service-item"
+                    data-category="support"
+                    data-search="مشاوره تخصصی کارشناسی راهنمایی"
+                >
+                    <span class="service-icon icon-gray">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </span>
+                    <span class="service-title">مشاوره</span>
+                </a>
+
+                <a
+                    href="pages/safety-health.html"
+                    class="service-item"
+                    data-category="support"
+                    data-search="ایمنی بهداشت سلامت محیط کار"
+                >
+                    <span class="service-icon icon-teal">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </span>
+                    <span class="service-title">ایمنی و بهداشت</span>
+                </a>
+
+                <a
+                    href="pages/thesis-support.html"
+                    class="service-item"
+                    data-category="support"
+                    data-search="حمایت پایان نامه دانشگاه پژوهش تحقیق"
+                >
+                    <span class="service-icon icon-blue">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+                    <span class="service-title">حمایت از پایان‌نامه</span>
+                </a>
+
+                <a
+                    href="pages/applicants.html"
+                    class="service-item"
+                    data-category="support"
+                    data-search="امور متقاضیان درخواست پیگیری راهنمایی"
+                >
+                    <span class="service-icon icon-red">
+                        <i class="fa-solid fa-users"></i>
+                    </span>
+                    <span class="service-title">امور متقاضیان</span>
+                </a>
+
+            </div>
+
+
+            <div class="empty-state" id="emptyState">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>خدمتی پیدا نشد</h3>
+                <p>عبارت جست‌وجو یا دسته‌بندی انتخاب‌شده را تغییر دهید.</p>
+            </div>
+
+        </section>
+
+
+        <!-- Help and AI assistant -->
+
+        <section class="help-card">
+
+            <div class="help-info">
+
+                <div class="help-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div>
+                    <h2 class="help-title">برای انتخاب خدمت راهنمایی می‌خواهید؟</h2>
+                    <p class="help-description">
+                        سؤال خود را از دستیار هوش مصنوعی بپرسید.
+                    </p>
+                </div>
+
+            </div>
+
+            <a href="bot.html" class="help-button">
+                شروع گفتگو
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="footer">
+
+        <div class="footer-title">
+            شرکت شهرک‌های صنعتی استان البرز
+        </div>
+
+        <p class="footer-description">
+            درگاه خدمات الکترونیک
+        </p>
+
+        <div class="footer-copy">
+            تمامی حقوق متعلق به شرکت شهرک‌های صنعتی استان البرز است.
+        </div>
+
+    </footer>
+
+
+    <!-- Bottom navigation -->
+
+    <nav class="bottom-nav" aria-label="ناوبری اصلی">
+
+        <a href="index.html" class="bottom-link">
+            <i class="fa-solid fa-house"></i>
+            <span>خانه</span>
+        </a>
+
+        <a href="services.html" class="bottom-link active" aria-current="page">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>خدمات</span>
+        </a>
+
+        <a href="bot.html" class="bottom-link">
+            <i class="fa-solid fa-robot"></i>
+            <span>دستیار</span>
+        </a>
+
+        <a href="profile.html" class="bottom-link">
+            <i class="fa-regular fa-user"></i>
+            <span>پروفایل</span>
+        </a>
+
+    </nav>
+
+</div>
+
+
+<script>
+    /* Dropdown menu */
+
+    const menuButton = document.getElementById("menuButton");
+    const menuPanel = document.getElementById("menuPanel");
+
+    function closeMenu() {
+        menuPanel.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "باز کردن منو");
+        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    }
+
+    menuButton.addEventListener("click", function () {
+        const isOpen = menuPanel.classList.toggle("open");
+
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "بستن منو" : "باز کردن منو"
+        );
+
+        menuButton.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    menuPanel.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+        if (
+            !menuPanel.contains(event.target) &&
+            !menuButton.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+
+    /* Service search and category filtering */
+
+    const searchInput = document.getElementById("serviceSearch");
+    const clearSearch = document.getElementById("clearSearch");
+    const serviceItems = Array.from(
+        document.querySelectorAll(".service-item")
+    );
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const resultsCount = document.getElementById("resultsCount");
+    const emptyState = document.getElementById("emptyState");
+
+    let selectedCategory = "all";
+
+    function normalizePersian(value) {
+        return value
+            .toLowerCase()
+            .replace(/ي/g, "ی")
+            .replace(/ك/g, "ک")
+            .replace(/ۀ/g, "ه")
+            .replace(/ة/g, "ه")
+            .replace(/أ|إ|ٱ/g, "ا")
+            .replace(/[\u064B-\u065F\u0670\u0640]/g, "")
+            .replace(/\s+/g, " ")
+            .trim();
+    }
+
+    function toPersianDigits(value) {
+        return String(value).replace(/\d/g, function (digit) {
+            return "۰۱۲۳۴۵۶۷۸۹"[digit];
+        });
+    }
+
+    function filterServices() {
+        const query = normalizePersian(searchInput.value);
+        let visibleCount = 0;
+
+        serviceItems.forEach(function (item) {
+            const category = item.dataset.category || "";
+            const searchableText = normalizePersian(
+                item.innerText + " " + (item.dataset.search || "")
+            );
+
+            const matchesCategory =
+                selectedCategory === "all" ||
+                category === selectedCategory;
+
+            const matchesSearch =
+                !query || searchableText.includes(query);
+
+            const isVisible = matchesCategory && matchesSearch;
+
+            item.hidden = !isVisible;
+
+            if (isVisible) {
+                visibleCount++;
+            }
+        });
+
+        resultsCount.textContent =
+            toPersianDigits(visibleCount) + " خدمت";
+
+        emptyState.classList.toggle("visible", visibleCount === 0);
+
+        clearSearch.classList.toggle(
+            "visible",
+            searchInput.value.length > 0
+        );
+    }
+
+    searchInput.addEventListener("input", filterServices);
+
+    clearSearch.addEventListener("click", function () {
+        searchInput.value = "";
+        filterServices();
+        searchInput.focus();
+    });
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            selectedCategory = button.dataset.category;
+
+            filterButtons.forEach(function (item) {
+                item.classList.toggle("active", item === button);
+            });
+
+            filterServices();
+        });
+    });
+
+    filterServices();
+</script>
+
+</body>
+</html>
